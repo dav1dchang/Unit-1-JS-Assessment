@@ -16,7 +16,7 @@
 */
 function getName(character) {
   // ⭐️ Example Solution Provided For First Function ⭐️
-  return character.name
+  return character.name;
 }
 
 /**
@@ -29,8 +29,7 @@ function getName(character) {
  * Sample data expected output: 5
  */
 function getFilmCount(character) {
-  // TODO: Add your code inside the functions (others below).
-
+  return character.films.length;
 }
 
 /**
@@ -42,7 +41,14 @@ function getFilmCount(character) {
  * If length is 0. Return 'none'
 */
 function getSecondStarshipName(character) {
-  // TODO: Add your code here.
+  for (let i=0; i<character.starships.length; i++){
+    if character.starships[i] = 2{
+      return character.starships.name;
+    }
+    else if character.starhips[i] = 0{
+      return `one`;
+    }
+  }
 }
 
 /**
@@ -54,9 +60,9 @@ function getSecondStarshipName(character) {
  *    Template: `{name}, {height}cm, {mass}kg. Featured in {film count} films.`
  *    Result: `Luke Skywalker, 172cm, 77kg. Featured in 5 films.`
  */
-function getSummary(character) {
-  // TODO: Add your code here.
-}
+function getSummary(character){
+  return `${character.name}, ${character.height}cm, ${character.mass}kg. Featured in ${character.films.length} films.`;
+}//getSummary
 
 /**
  * ### Challenge `getVehiclesCostInCreditsSumTotal`
@@ -66,8 +72,15 @@ function getSummary(character) {
  * Sum the total cost in credits for all vehicles defined on the input character.
  * Sample data expected output: 8000
 */
+
+let vehiclesCost = 0;
+
 function getVehiclesCostInCreditsSumTotal(character) {
-  // TODO: Add your code here.
+  
+  let vehiclesCost = character.vehicles.reduce(function(accumulator, item){
+    return accumulator += item.cost_in_credits;
+  }, 0);
+  return vehiclesCost;
 }
 
 /**
@@ -80,8 +93,14 @@ function getVehiclesCostInCreditsSumTotal(character) {
  *
  * Sample data expected output: 27
 */
+let totalPeople = 0;
+
 function getStarshipPassengerAndCrewSumTotal(character) {
-  // TODO: Add your code here.
+  
+  let totalPeople = character.starships.reduce(function(accumulator, item){
+    return accumulator += item.crew + item.passengers;
+  }, 0);
+  return totalPeople;
 }
 
 /**
@@ -98,7 +117,14 @@ function getStarshipPassengerAndCrewSumTotal(character) {
  * Given film #7, expected error: `There are only 3 Star Wars movies. Flan fiction excluded.`
 */
 function getNthFilm(character, filmNumber) {
-  // TODO: Add your code here.
+  for (let i = 0; i < character.films.length; i++){
+    if (filmNumber <= 3 && filmNumber > 0) {
+      return character.films[i];
+    }
+    else {
+      return `There are only 3 Star Wars movies. Spaceballs should be one of them, but isn't.`
+    }
+  }
 }
 
 /**
