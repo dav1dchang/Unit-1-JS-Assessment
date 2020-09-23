@@ -41,13 +41,10 @@ function getFilmCount(character) {
  * If length is 0. Return 'none'
 */
 function getSecondStarshipName(character) {
-  for (let i=0; i<character.starships.length; i++){
-    if character.starships[i] = 2{
-      return character.starships.name;
-    }
-    else if character.starhips[i] = 0{
-      return `one`;
-    }
+  if (character.starships.length === 0) {
+    return "none";
+  } else {
+    return character.starships[1].name;
   }
 }
 
@@ -117,14 +114,9 @@ function getStarshipPassengerAndCrewSumTotal(character) {
  * Given film #7, expected error: `There are only 3 Star Wars movies. Flan fiction excluded.`
 */
 function getNthFilm(character, filmNumber) {
-  for (let i = 0; i < character.films.length; i++){
-    if (filmNumber <= 3 && filmNumber > 0) {
-      return character.films[i];
-    }
-    else {
-      return `There are only 3 Star Wars movies. Spaceballs should be one of them, but isn't.`
-    }
-  }
+  return filmNumber <= 3 && filmNumber > 0
+    ? character.films[filmNumber - 1]
+    : `There are only 3 Star Wars movies. Spaceballs should be of them, but isn't.`;
 }
 
 /**
